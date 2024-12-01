@@ -1,14 +1,13 @@
 #!/bin/bash
-set +e -x
+set +e
 if [ x$B = x ]; then 
- echo set B to the absolute path to BareMetal-OS
+ echo set B to the path to BareMetal-OS
 fi
 app=$1
 root=${PWD}
 BMFS_SIZE=16
 set -e
 root=`pwd`
-cp t.app $B/sys
 if [ ! -d $B ]; then echo no $B ; exit 1; fi
 if [ x$app = x ]; then echo no app; exit 1; fi
 if [ ! -e $app ]; then echo no $app; exit 1; fi
