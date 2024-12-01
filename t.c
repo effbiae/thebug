@@ -1,12 +1,11 @@
 #define out(s,n) asm volatile ("call *0x00100018" : : "S"(s), "c"(n))
 int main();
-int print(char*);
 int _start()
 {
 	char*s="hi 8\n";
 	int n=5;
 	out(s,n);
-        return  main();
+        return main();
 }
 
 #ifdef THEBUG
@@ -17,6 +16,5 @@ ssize_t write(int f,const void *s, size_t n) {
 #endif
 int main()
 {
-	out("ho 9\n",5);
 	return 0;
 }

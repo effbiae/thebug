@@ -6,7 +6,6 @@ fi
 app=$1
 root=${PWD}
 BMFS_SIZE=16
-set -e
 root=`pwd`
 if [ ! -d $B ]; then echo no $B ; exit 1; fi
 if [ x$app = x ]; then echo no app; exit 1; fi
