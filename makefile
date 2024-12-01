@@ -7,6 +7,8 @@ endif
 $(shell touch t.c)
 l=-z max-page-size=0x1000
 
+all:qemu
+
 pf/pf.h:
 	git clone https://github.com/kparc/pf.git
 
@@ -21,3 +23,6 @@ qemu:t.app.img
 
 bochs:t.app.img
 	bochs -n -q 'boot: disk' 'ata0-master: type=disk, path=t.app.img' 
+
+clean:
+	rm -rf pf t.app* t.o t
